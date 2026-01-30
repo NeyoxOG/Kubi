@@ -1,43 +1,43 @@
 const designs = [
   {
     id: "neon",
-    name: "Neon Stream",
-    description: "Tech-Magazin mit Glow, Progress-Bar und Story-Feed.",
+    name: "Aurora Pulse",
+    description: "Futuristische Lichtlinien, Glows und immersiver Flow.",
   },
   {
     id: "tabloid",
-    name: "Der Reißer",
-    description: "Boulevard-Alarm mit Breaking-Ticker und Pop-ups.",
+    name: "Flash Report",
+    description: "Boulevard-Alarm mit Headlines, Ticker und Cover-Wall.",
   },
   {
     id: "kinetic",
-    name: "Kinetic Arts",
-    description: "High-End Kunstkatalog mit viel Weißraum.",
+    name: "Gallery Luxe",
+    description: "Editorial-Grid mit Premium Weißraum und Kunstgefühl.",
   },
   {
     id: "newspaper",
-    name: "Classic Newspaper",
-    description: "Retro-Print mit Spalten, Linien und Rubriken.",
+    name: "Archiv Print",
+    description: "Zeitungslook mit Spalten, Linien und Marginalien.",
   },
   {
     id: "social",
-    name: "Social Magazine",
-    description: "Cards, Stories und mobile First News-Feed.",
+    name: "StoryGrid",
+    description: "Mobile Cards, Stories und Bildstrecken.",
   },
   {
     id: "minimal",
-    name: "Minimal & Accessible",
-    description: "Maximale Lesbarkeit und Ruhe.",
+    name: "Clear Focus",
+    description: "Barrierefrei, ruhig, auf Text fokussiert.",
   },
   {
     id: "timeline",
-    name: "Timeline Reportage",
-    description: "Kapitel entlang einer Storyline.",
+    name: "Chronicle Path",
+    description: "Kapitel entlang einer visuellen Reportage-Line.",
   },
   {
     id: "experimental",
-    name: "Presentation Mode",
-    description: "Scroll-Snap Slides für den Beamer.",
+    name: "Showroom Deck",
+    description: "Präsentationsmodus mit Slides & Mini-Map.",
   },
 ];
 
@@ -69,7 +69,7 @@ const articles = [
     id: "kubiz",
     title: "Das KuBiZ – viel mehr als Schule",
     author: "Redaktion",
-    image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1400&q=80",
     fallback: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
     text: [
       "Das KuBiZ ist nicht nur ein Schulgebäude, sondern ein lebendiger Campus. Moderne Räume, helle Flure, gemeinsame Bereiche und viel Platz zum Lernen und Leben machen unsere Schule zu einem besonderen Ort.",

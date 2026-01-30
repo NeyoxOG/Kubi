@@ -642,7 +642,7 @@ body.text-mode .article {
 
 /* Neon Stream */
 body.design-neon {
-  background: radial-gradient(circle at top, #0d101f, #05050c 60%);
+  background: radial-gradient(circle at top, #0f1530, #05050c 65%);
   color: #e8f2ff;
 }
 
@@ -655,6 +655,7 @@ body.design-neon .article {
 body.design-neon .article img {
   position: sticky;
   top: 6rem;
+  filter: drop-shadow(0 10px 24px rgba(0, 209, 255, 0.2));
 }
 
 body.design-neon .toc,
@@ -680,6 +681,14 @@ body.design-neon .article .meta {
   color: rgba(0, 209, 255, 0.8);
 }
 
+body.design-neon .article {
+  border-radius: 2rem;
+}
+
+body.design-neon .hero-copy h2 {
+  text-shadow: 0 0 24px rgba(0, 209, 255, 0.35);
+}
+
 /* Tabloid */
 body.design-tabloid {
   background: #0d0d0d;
@@ -695,6 +704,7 @@ body.design-tabloid .reader-header {
 body.design-tabloid .article {
   border-color: #e3000f;
   background: #1a0406;
+  border-left: 8px solid #e3000f;
 }
 
 body.design-tabloid .article h3 {
@@ -727,6 +737,8 @@ body.design-tabloid .ticker {
   padding: 0.4rem 0;
   overflow: hidden;
   margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
 }
 
 body.design-tabloid .ticker span {
@@ -769,11 +781,17 @@ body.design-kinetic .design-content {
 
 body.design-kinetic .article {
   padding: 3rem;
+  border-radius: 2.2rem;
 }
 
 body.design-kinetic .design-hero {
   background: #ffffff;
   border-color: #111;
+}
+
+body.design-kinetic .article img {
+  max-height: 420px;
+  border-radius: 2rem;
 }
 
 /* Classic Newspaper */
@@ -796,6 +814,11 @@ body.design-newspaper .article {
 
 body.design-newspaper .article h3 {
   font-size: 1.8rem;
+}
+
+body.design-newspaper .article .content {
+  column-count: 2;
+  column-gap: 1.5rem;
 }
 
 body.design-newspaper .caption {
@@ -855,6 +878,14 @@ body.design-social .article img {
   max-height: 220px;
 }
 
+body.design-social .article .meta {
+  font-size: 0.85rem;
+}
+
+body.design-social .hero-media img {
+  max-height: 280px;
+}
+
 /* Minimal Accessible */
 body.design-minimal {
   background: #ffffff;
@@ -897,6 +928,10 @@ body.design-minimal .article {
 
 body.design-minimal .article img {
   max-height: 260px;
+}
+
+body.design-minimal .design-content {
+  gap: 3.5rem;
 }
 
 /* Timeline */
@@ -950,6 +985,7 @@ body.design-timeline .design-hero {
 body.design-timeline .article {
   border-left: 3px solid rgba(0, 209, 255, 0.4);
   padding-left: 2.5rem;
+  background: rgba(14, 22, 26, 0.8);
 }
 
 /* Experimental */
@@ -973,10 +1009,15 @@ body.design-experimental .design-hero {
 body.design-experimental .article {
   scroll-snap-align: start;
   min-height: calc(100vh - 220px);
+  border-radius: 2rem;
 }
 
 body.design-experimental .article img {
   max-height: 45vh;
+}
+
+body.design-experimental .article h3 {
+  font-size: 2.4rem;
 }
 
 body.design-experimental .slide-controls {
