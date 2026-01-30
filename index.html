@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KUBI – Digitale Schülerzeitung</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <section id="landing" class="landing">
+      <div class="landing-hero">
+        <p class="landing-kicker">Digitale Schülerzeitung</p>
+        <h1>KUBI</h1>
+        <p class="landing-subtitle">Wähle dein Lese-Erlebnis</p>
+        <div class="landing-actions">
+          <button class="primary" id="open-compare">Vergleichen</button>
+        </div>
+      </div>
+      <div class="design-grid" id="design-grid"></div>
+      <footer class="landing-footer">
+        <a href="https://kubi.rs-alsdorf.de" target="_blank" rel="noreferrer">kubi.rs-alsdorf.de</a>
+      </footer>
+    </section>
+
+    <section id="reader" class="reader hidden">
+      <header class="reader-header">
+        <button class="ghost" id="back-to-landing">Zurück</button>
+        <div class="reader-title">
+          <h2 id="reader-title"></h2>
+          <p id="reader-subtitle"></p>
+        </div>
+        <div class="reader-controls">
+          <label class="design-switcher">
+            <span>Design</span>
+            <select id="design-switch"></select>
+          </label>
+          <button class="ghost hidden" id="toggle-text-mode">Textmodus</button>
+          <button class="ghost" id="open-compare-alt">Vergleichen</button>
+        </div>
+      </header>
+      <div class="progress" id="progress"></div>
+      <nav class="toc" id="toc"></nav>
+      <main class="design-content" id="design-content"></main>
+    </section>
+
+    <section id="compare" class="compare hidden">
+      <header class="reader-header">
+        <button class="ghost" id="back-from-compare">Zurück</button>
+        <div>
+          <h2>Vergleichsmodus</h2>
+          <p>Stelle Designs nebeneinander, um Unterschiede zu diskutieren.</p>
+        </div>
+      </header>
+      <div class="compare-controls">
+        <label>
+          Artikel
+          <select id="compare-article"></select>
+        </label>
+        <label>
+          Design 1
+          <select id="compare-design-1"></select>
+        </label>
+        <label>
+          Design 2
+          <select id="compare-design-2"></select>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="compare-third-toggle" />
+          Design 3 anzeigen
+        </label>
+        <label id="compare-design-3-wrap" class="hidden">
+          Design 3
+          <select id="compare-design-3"></select>
+        </label>
+      </div>
+      <div class="compare-grid" id="compare-grid"></div>
+    </section>
+  </div>
+
+  <div class="modal hidden" id="article-modal">
+    <div class="modal-content">
+      <button class="ghost close" id="close-modal">Schließen</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
