@@ -290,6 +290,11 @@ function renderDesignContent(designId) {
   toc.innerHTML = "";
   toc.classList.toggle("hidden", designId !== "neon");
 
+  const hero = buildDesignHero(designId);
+  if (hero) {
+    designContent.appendChild(hero);
+  }
+
   if (designId === "social") {
     const stories = document.createElement("div");
     stories.className = "stories";
@@ -299,6 +304,22 @@ function renderDesignContent(designId) {
       stories.appendChild(story);
     });
     designContent.appendChild(stories);
+
+    const mediaStrip = document.createElement("div");
+    mediaStrip.className = "media-strip";
+    mediaStrip.innerHTML = articles
+      .slice(0, 6)
+      .map((article) => {
+        const fallbacks = getFallbacks(article).join("|");
+        return `
+          <figure class="media-tile">
+            <img src="${article.image}" alt="${article.title}" data-fallbacks="${fallbacks}" data-fallback-index="0" />
+            <figcaption>${article.title}</figcaption>
+          </figure>
+        `;
+      })
+      .join("");
+    designContent.appendChild(mediaStrip);
   }
 
   if (designId === "tabloid") {
@@ -306,6 +327,22 @@ function renderDesignContent(designId) {
     ticker.className = "ticker";
     ticker.innerHTML = `<span>Breaking News · Skandal! · Alarm! · Exklusiv! · KUBI Spezial · Breaking News · Skandal! · Alarm! · Exklusiv!</span>`;
     designContent.appendChild(ticker);
+
+    const coverGrid = document.createElement("div");
+    coverGrid.className = "cover-grid";
+    coverGrid.innerHTML = articles
+      .slice(0, 4)
+      .map((article) => {
+        const fallbacks = getFallbacks(article).join("|");
+        return `
+          <div class="cover-tile">
+            <img src="${article.image}" alt="${article.title}" data-fallbacks="${fallbacks}" data-fallback-index="0" />
+            <div class="cover-title">${article.title}</div>
+          </div>
+        `;
+      })
+      .join("");
+    designContent.appendChild(coverGrid);
   }
 
   if (designId === "experimental") {
@@ -504,6 +541,25 @@ function createArticleObserver() {
     { threshold: 0.15 }
   );
   return observer;
+}
+
+function buildDesignHero(designId) {
+  const heroArticle = articles[designId === "neon" ? 7 : 0] || articles[0];
+  const fallbacks = getFallbacks(heroArticle).join("|");
+  const hero = document.createElement("section");
+  hero.className = `design-hero design-hero-${designId}`;
+  hero.innerHTML = `
+    <div class="hero-media">
+      <img src="${heroArticle.image}" alt="${heroArticle.title}" data-fallbacks="${fallbacks}" data-fallback-index="0" />
+    </div>
+    <div class="hero-copy">
+      <p class="hero-label">KUBI Showcase</p>
+      <h2>${heroArticle.title}</h2>
+      <p>${heroArticle.text[0]}</p>
+      <div class="hero-meta">${heroArticle.author}</div>
+    </div>
+  `;
+  return hero;
 }
 
 function populateCompareControls() {

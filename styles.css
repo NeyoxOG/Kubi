@@ -344,6 +344,46 @@ select {
   gap: 2.5rem;
 }
 
+.design-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hero-media img {
+  width: 100%;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  max-height: 360px;
+}
+
+.hero-copy {
+  display: grid;
+  gap: 1rem;
+}
+
+.hero-label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.hero-copy h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.hero-meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
 .article {
   background: rgba(255, 255, 255, 0.04);
   border-radius: 1.5rem;
@@ -354,6 +394,60 @@ select {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.cover-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.cover-tile {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 2px solid #e3000f;
+}
+
+.cover-tile img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.cover-title {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 0.6rem;
+  background: rgba(0, 0, 0, 0.7);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.media-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.media-tile {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.media-tile img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+.media-tile figcaption {
+  padding: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--muted);
 }
 
 .article.visible {
@@ -572,6 +666,11 @@ body.design-neon .design-content {
   grid-template-columns: minmax(0, 1fr);
 }
 
+body.design-neon .design-hero {
+  background: linear-gradient(120deg, rgba(0, 209, 255, 0.2), rgba(109, 93, 252, 0.2));
+  border-color: rgba(0, 209, 255, 0.4);
+}
+
 body.design-neon .article h3 {
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -601,6 +700,11 @@ body.design-tabloid .article {
 body.design-tabloid .article h3 {
   font-size: 2.3rem;
   text-transform: uppercase;
+}
+
+body.design-tabloid .design-hero {
+  background: #1a0406;
+  border-color: #e3000f;
 }
 
 body.design-tabloid .article img {
@@ -667,6 +771,11 @@ body.design-kinetic .article {
   padding: 3rem;
 }
 
+body.design-kinetic .design-hero {
+  background: #ffffff;
+  border-color: #111;
+}
+
 /* Classic Newspaper */
 body.design-newspaper {
   background: #f2efe6;
@@ -694,6 +803,11 @@ body.design-newspaper .caption {
   color: #6b6454;
   border-top: 1px solid #d5cdb8;
   padding-top: 0.5rem;
+}
+
+body.design-newspaper .design-hero {
+  background: #fffaf0;
+  border-color: #d5cdb8;
 }
 
 body.design-newspaper .article img {
@@ -726,6 +840,11 @@ body.design-social .story {
   border-radius: 50%;
   border: 2px solid #6d5dfc;
   background: linear-gradient(135deg, rgba(109, 93, 252, 0.5), rgba(0, 209, 255, 0.4));
+}
+
+body.design-social .design-hero {
+  background: rgba(109, 93, 252, 0.12);
+  border-color: rgba(109, 93, 252, 0.4);
 }
 
 body.design-social .article {
@@ -765,6 +884,11 @@ body.design-minimal .design-switcher select {
 body.design-minimal .design-switcher select {
   background: #ffffff;
   border-color: #111;
+}
+
+body.design-minimal .design-hero {
+  background: #ffffff;
+  border-color: #d5d7dc;
 }
 
 body.design-minimal .article {
@@ -818,6 +942,11 @@ body.design-timeline .chapter {
   letter-spacing: 0.3em;
 }
 
+body.design-timeline .design-hero {
+  background: rgba(0, 209, 255, 0.08);
+  border-color: rgba(0, 209, 255, 0.3);
+}
+
 body.design-timeline .article {
   border-left: 3px solid rgba(0, 209, 255, 0.4);
   padding-left: 2.5rem;
@@ -834,6 +963,11 @@ body.design-experimental .design-content {
   overflow-y: auto;
   scroll-snap-type: y mandatory;
   padding-right: 1rem;
+}
+
+body.design-experimental .design-hero {
+  min-height: auto;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 body.design-experimental .article {
@@ -878,6 +1012,10 @@ body.design-experimental .slide-map {
   .reader-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .design-hero {
+    grid-template-columns: 1fr;
   }
 
   .reader-controls {
